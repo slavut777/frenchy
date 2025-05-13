@@ -74,6 +74,7 @@ class FlashcardResponse(BaseModel):
     id: str
     french: str
     russian: str
+    pronunciation: Optional[str] = None
     status: str
     strength: int
 
