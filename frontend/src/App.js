@@ -101,22 +101,22 @@ const Flashcard = ({ card, onKnow, onDontKnow }) => {
 const StatsDashboard = ({ stats }) => {
   return (
     <div className="stats-dashboard">
-      <h2>Your Progress</h2>
+      <h2>Ваш прогресс</h2>
       <div className="stats-container">
         <div className="stat-box">
-          <h3>Known</h3>
+          <h3>Изучено</h3>
           <div className="stat-value">{stats.known_words}</div>
         </div>
         <div className="stat-box">
-          <h3>Learning</h3>
+          <h3>В процессе</h3>
           <div className="stat-value">{stats.learning_words}</div>
         </div>
         <div className="stat-box">
-          <h3>Not Started</h3>
+          <h3>Не начато</h3>
           <div className="stat-value">{stats.new_words}</div>
         </div>
         <div className="stat-box">
-          <h3>Total</h3>
+          <h3>Всего</h3>
           <div className="stat-value">{stats.total_words}</div>
         </div>
       </div>
@@ -127,7 +127,7 @@ const StatsDashboard = ({ stats }) => {
             style={{ width: `${stats.progress_percentage}%` }}
           ></div>
         </div>
-        <div className="progress-label">{Math.round(stats.progress_percentage)}% Complete</div>
+        <div className="progress-label">{Math.round(stats.progress_percentage)}% изучено</div>
       </div>
     </div>
   );
