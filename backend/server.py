@@ -372,6 +372,7 @@ async def get_flashcards(
             "id": word.get("id"),
             "french": word.get("french"),
             "russian": word.get("russian"),
+            "pronunciation": word.get("pronunciation", ""),
             "status": progress_by_word_id.get(word.get("id"), {}).get("status", "new"),
             "strength": progress_by_word_id.get(word.get("id"), {}).get("strength", 0)
         }
