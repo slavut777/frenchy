@@ -302,6 +302,7 @@ async def get_all_words(
             "id": word.get("id"),
             "french": word.get("french"),
             "russian": word.get("russian"),
+            "pronunciation": word.get("pronunciation", ""),
             "created_at": word.get("created_at")
         }
         for word in words
