@@ -42,6 +42,7 @@ app.add_middleware(
 class WordBase(BaseModel):
     french: str
     russian: str
+    pronunciation: Optional[str] = None
 
 class WordCreate(WordBase):
     pass
