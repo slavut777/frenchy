@@ -223,12 +223,12 @@ function App() {
   return (
     <div className="app-container">
       <header className="header">
-        <h1>French Vocabulary Trainer</h1>
-        <p>Learn the 1000 most common French words</p>
+        <h1>Тренажер французской лексики</h1>
+        <p>Изучите 1000 самых распространенных французских слов</p>
       </header>
       
       <main className="main-content">
-        {loading && <div className="loading">Loading cards...</div>}
+        {loading && <div className="loading">Загрузка карточек...</div>}
         {error && <div className="error">{error}</div>}
         
         {!loading && !error && flashcards.length > 0 && (
@@ -239,15 +239,15 @@ function App() {
               onDontKnow={handleDontKnow}
             />
             <div className="card-counter">
-              Card {currentCardIndex + 1} of {flashcards.length}
+              Карточка {currentCardIndex + 1} из {flashcards.length}
             </div>
           </div>
         )}
         
         {!loading && !error && flashcards.length === 0 && (
           <div className="no-cards">
-            <p>No flashcards available.</p>
-            <button className="btn" onClick={fetchFlashcards}>Refresh</button>
+            <p>Нет доступных карточек.</p>
+            <button className="btn" onClick={fetchFlashcards}>Обновить</button>
           </div>
         )}
       </main>
