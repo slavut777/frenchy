@@ -25,6 +25,9 @@ const Flashcard = ({ card, onKnow, onDontKnow }) => {
         </div>
         <div className="flashcard-back">
           <h2>{card.russian}</h2>
+          {card.pronunciation && (
+            <p className="pronunciation">Произношение: {card.pronunciation}</p>
+          )}
           <div className="flashcard-actions">
             <button 
               className="btn btn-danger" 
