@@ -12,14 +12,6 @@ const Flashcard = ({ card, onKnow, onDontKnow }) => {
   const handleFlip = () => {
     setFlipped(!flipped);
   };
-  
-  // Audio pronunciation function
-  const speakWord = (e) => {
-    e.stopPropagation();
-    const utterance = new SpeechSynthesisUtterance(card.french);
-    utterance.lang = 'fr-FR';
-    speechSynthesis.speak(utterance);
-  };
 
   return (
     <div 
@@ -29,17 +21,6 @@ const Flashcard = ({ card, onKnow, onDontKnow }) => {
       <div className="flashcard-inner">
         <div className="flashcard-front">
           <h2>{card.french}</h2>
-          <button 
-            className="audio-btn" 
-            onClick={speakWord}
-            title="Listen to pronunciation"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-            </svg>
-          </button>
           <p className="hint">Click to reveal translation</p>
         </div>
         <div className="flashcard-back">
@@ -47,17 +28,6 @@ const Flashcard = ({ card, onKnow, onDontKnow }) => {
           {card.pronunciation && (
             <p className="pronunciation">Произношение: {card.pronunciation}</p>
           )}
-          <button 
-            className="audio-btn audio-btn-light" 
-            onClick={speakWord}
-            title="Listen to pronunciation"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-            </svg>
-          </button>
           <div className="flashcard-actions">
             <button 
               className="btn btn-danger" 
