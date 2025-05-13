@@ -243,11 +243,10 @@ async def fetch_and_store_french_words():
         
         # Generate more words to reach 1000 total
         for i in range(1, 100):
-            prefix = f"word{i}_"
             for base_word in [*base_words, *adjectives, *colors, *verbs, *numbers]:
                 if len(all_french_words) < 1000:
-                    french_word = prefix + base_word
-                    russian = "русский_" + (russian_translations.get(base_word, base_word))
+                    french_word = base_word
+                    rrussian = russian_translations.get(base_word, base_word)
                     pronunciation = pronunciations.get(base_word, "/əəə/")
                     all_french_words.append({
                         "french": french_word,
